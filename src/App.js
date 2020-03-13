@@ -10,8 +10,6 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 //css
 import './App.css';
-
-
 function App() {
 
   return (
@@ -21,9 +19,10 @@ function App() {
         
       <BrowserRouter>
         <div>
-          <Homepage/> 
+          
           <NavBar/>
             <Switch>
+            {/* <Route path = "/" component = {Homepage}/> */}
             <Route path="/register" component={Register}/>
 
            
