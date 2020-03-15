@@ -1,80 +1,85 @@
 import React, {Component, useState} from "react";
 
 
-function Register(props) {
+function Register () {
 
-    const [url, setUrl] = useState("http://localhost:5000/register_user")
-    const [inputF_name, setInputF_name] = ("");
-    const [inputL_name, setInputL_name] = ("");
-    const [inputUsername, setInputUsername] = ("");
-    const [inputPassword, setInputPassword] = ("");
+    const [inputF_name, setInputF_name] = useState("");
+    const [inputL_name, setInputL_name] = useState("");
+    const [inputUsername, setInputUsername] = useState("");
     const [inputEmail, setInputEmail] = useState("");
-    const [response, setResponse] = useState("");
-
-    const registerAccount = async () =>{
-        const output = document.getElementById("flaskResponse");
-        const configs = {
+    const [inputPassword, setInputPassword] = useState("");
+    const [url, setUrl] = useState("http://localhost:5000/register")
+    const [response, setResponse] = useState("")
+  
+    const registerAccount = async () => {
+      const output = document.getElementById("flaskResponse");
+      const configs = {
+        method : "POST",
+        mode : "cors",
+        headers : {"Content-Type" : "application/json"},
         body : JSON.stringify({
-        f_name : inputF_name,
-        l_name : inputL_name,
-        username : inputUsername,
-        password : inputPassword,
-        email : inputEmail
+          f_name : inputF_name,
+          l_name : inputL_name,
+          username : inputUsername,
+          email : inputEmail,
+          password : inputPassword
         })
-        }
-
-    }
-
-    try{
-    const response = await fetch(url, configs);
-    const flaskResponse = await response.json();
-    setResponse(flaskResponse['response'])
-    } catch (error){
-
-        output.innerHTML += "<p>" + response + "<p>";
+      }
+      try {
+        JSON.parse(configs);
+        const response = await fetch(url, configs);
+        const flaskResponse = await response.json();
+        setResponse(flaskResponse["response"]);
+      } catch (error) {
+        console.log(error);
+      }
+      output.innerHTML += "<p>" + response + "</p>";
     }
     return (
-
-        <h3>Register Account</h3>
-        <div id = "flaskResponse">
-        <form>
+      <div className="Register">
+       
+        <h2>Register Account</h2>
+        <div id="flaskResponse"/>
+       <center><form className = "registerForm">
         <input 
           id="f_name" 
           onChange={e => setInputF_name(e.target.value)}
           placeholder="First Name">
         </input>
-
+        <br></br>
         <input 
           id="l_name" 
           onChange={e => setInputL_name(e.target.value)}
           placeholder="Last Name">
         </input>
-
+        <br></br>
         <input 
           id="username" 
           onChange={e => setInputUsername(e.target.value)}
           placeholder="Username">
         </input>
-
+        <br></br>
         <input 
           id="password" 
           onChange={e => setInputPassword(e.target.value)}
           placeholder="Password">
         </input>
-
+        <br></br>
         <input 
           id="email" 
           onChange={e => setInputEmail(e.target.value)}
           placeholder="Email">
         </input>
      
-      </form>  
+      </form></center> 
+        <br></br>
+        <center>
+        <button onClick={() => registerAccount()} id="registerButton">Register</button>
+        </center>
       </div>
-   
-   <br></br>
-   <button onClick={() => registerAccount()} id="registerButton">Register</button>
-    );
-  
+    )
   }
-
+  
   export default Register;
+
+
