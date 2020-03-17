@@ -8,11 +8,11 @@ function Register () {
     const [inputUsername, setInputUsername] = useState("");
     const [inputEmail, setInputEmail] = useState("");
     const [inputPassword, setInputPassword] = useState("");
-    const [url, setUrl] = useState("http://localhost:5000/register")
+    const [url, setUrl] = useState("http://localhost:3000/register")
     const [response, setResponse] = useState("")
-  
+
     const registerAccount = async () => {
-      const output = document.getElementById("flaskResponse");
+      // const output = document.getElementById("flaskResponse");
       const configs = {
         method : "POST",
         mode : "cors",
@@ -23,17 +23,21 @@ function Register () {
           username : inputUsername,
           email : inputEmail,
           password : inputPassword
-        })
+
+        }
+        )
       }
       try {
-        JSON.parse(configs);
+       
+        console.log(configs, "THESE ARE THE CONFIGS!!!!!>>>>>>>>>>") 
         const response = await fetch(url, configs);
         const flaskResponse = await response.json();
         setResponse(flaskResponse["response"]);
       } catch (error) {
         console.log(error);
       }
-      output.innerHTML += "<p>" + response + "</p>";
+    
+      
     }
     return (
       <div className="Register">
@@ -41,31 +45,36 @@ function Register () {
         <h2>Register Account</h2>
         <div id="flaskResponse"/>
        <center><form className = "registerForm">
-        <input 
+        <input
+          type = "text" 
           id="f_name" 
           onChange={e => setInputF_name(e.target.value)}
           placeholder="First Name">
         </input>
         <br></br>
-        <input 
+        <input
+          type = "text"  
           id="l_name" 
           onChange={e => setInputL_name(e.target.value)}
           placeholder="Last Name">
         </input>
         <br></br>
         <input 
+          type = "text"
           id="username" 
           onChange={e => setInputUsername(e.target.value)}
           placeholder="Username">
         </input>
         <br></br>
         <input 
+          type = "password"
           id="password" 
           onChange={e => setInputPassword(e.target.value)}
           placeholder="Password">
         </input>
         <br></br>
         <input 
+          type = "text"
           id="email" 
           onChange={e => setInputEmail(e.target.value)}
           placeholder="Email">
@@ -74,9 +83,12 @@ function Register () {
       </form></center> 
         <br></br>
         <center>
-        <button onClick={() => registerAccount()} id="registerButton">Register</button>
+        <button onClick={()  => registerAccount()} className="registerButton">Register</button>
         </center>
+
+      
       </div>
+      
     )
   }
   
