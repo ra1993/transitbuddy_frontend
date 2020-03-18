@@ -8,7 +8,7 @@ function Register () {
     const [inputUsername, setInputUsername] = useState("");
     const [inputEmail, setInputEmail] = useState("");
     const [inputPassword, setInputPassword] = useState("");
-    const [url, setUrl] = useState("http://localhost:3000/register")
+    const [url, setUrl] = useState("http://localhost:5000/register")
     const [response, setResponse] = useState("")
 
     const registerAccount = async () => {
@@ -31,8 +31,8 @@ function Register () {
        
         console.log(configs, "THESE ARE THE CONFIGS!!!!!>>>>>>>>>>") 
         const response = await fetch(url, configs);
-        const flaskResponse = await response.json();
-        setResponse(flaskResponse["response"]);
+        // const flaskResponse = await response.json();
+        // setResponse(flaskResponse["response"]);
       } catch (error) {
         console.log(error);
       }
