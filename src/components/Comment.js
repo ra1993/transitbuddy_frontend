@@ -6,7 +6,7 @@ function formatDate(date) {
 
 function Comment(props) {
 const [inputText, setinputText] = useState("");
-const [url, setUrl] = useState("http://localhost:3000/comment")
+const [url, setUrl] = useState("http://localhost:5000/comment")
 
 
   const commentPost  = {

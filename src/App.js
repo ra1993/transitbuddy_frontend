@@ -24,7 +24,7 @@ function App() {
           
           <NavBar/>
             <Switch>
-            {/* <Route path = "/" component = {Homepage}/> */}
+            <Route path = "/homepage" component = {Homepage}/>
             <Route path="/register" component={Register}/>
             <Route path = "/login" component = {Login}/>
             <Route path = "/mtaFeed" component = {mtaFeed}/>
