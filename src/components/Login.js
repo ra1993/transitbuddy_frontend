@@ -12,10 +12,10 @@ const [url, setUrl] = useState("http://localhost:5000/login")
 const loginAccount = async () =>{
 
 const configs = {
-method: "GET",
+method: "POST",
 mode: "cors",
 headers :{"Content-Type" : "application/json"},
-data: JSON.stringify({
+body: JSON.stringify({
 username : inputUsername,
 password: inputPassword
 })

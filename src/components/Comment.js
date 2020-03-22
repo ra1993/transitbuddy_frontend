@@ -13,9 +13,12 @@ const [url, setUrl] = useState("http://localhost:5000/comment")
     method: "POST",
     mode: "cors",
     headers : {"Content-Type" : "application/json"},
-    date: new Date(),
-    text: inputText,
-    username: username
+    body: JSON.stringify({
+      date: new Date(),
+      text: inputText,
+      username: username
+    })
+ 
   };
 
   return (

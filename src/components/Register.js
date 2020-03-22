@@ -86,7 +86,6 @@ function Register () {
         <button onClick={()  => registerAccount()} className="registerButton">Register</button>
         </center>
 
-      
       </div>
       
     )
