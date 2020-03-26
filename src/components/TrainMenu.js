@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import '/home/richarda/Bootcamp/project_MTA/frontend_app/src/App.css';
+import '../App.css';
 import StationMenu from './StationMenu';
 import axios from 'axios';
 
@@ -11,16 +11,20 @@ const configs = {
 const fetchStations = async (train) => {
 
   let results = await fetch(url + train, configs)
-  console.log(results.body)
-  // return results
-  return []
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        return data
+      })
+  return results
 }
 const fetchTrains = () => {
   return ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'J', 'L', 'M',
     'N', 'Q', 'R', 'W', 'Z', '1', '2', '3', '4', '5', '6', '7']
 }
 function TrainMenu() {
-  const [inputTrain, setInputTrain] = useState("");
+  const [inputTrain, setInputTrain] = useState("A");
   const [stations, setStations] = useState([])
   const [trains, setTrains] = useState([])
 
@@ -33,14 +37,13 @@ function TrainMenu() {
   useEffect(() => {
     if(inputTrain !== '') {
       fetchStations(inputTrain)
-        .then(res => {
-          setStations(res)
-          console.log(res)
-        })
-        .catch(err => {
-          console.log(err)
-        })
-      }
+          .then(res => {
+            setStations(res.stations)
+          })
+          .catch(err => {
+            console.log(err)
+          })
+    }
     }, [inputTrain])
 
   useEffect(() => {
@@ -62,19 +65,6 @@ function TrainMenu() {
 
 
 export default TrainMenu;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

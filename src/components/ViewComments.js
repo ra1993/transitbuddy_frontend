@@ -1,8 +1,10 @@
 import React, {Component, useState} from 'react'; 
 
 
-function Comments(props) {
+
 const [url, setUrl] = useState("http://localhost:5000/comments")
+
+function Comments(props) {
 const [items, setItems] = [];
 
   const commentPost  = {

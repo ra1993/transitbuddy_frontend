@@ -1,14 +1,34 @@
-import React, {Component, useState} from "react";
-
-
-
+import React, {Component, useState, useEffect} from "react";
 
 function Login () {
 
 const [inputUsername, setInputUsername] = useState("");
 const [inputPassword, setInputPassword] = useState("");
-const [url, setUrl] = useState("http://localhost:5000/login")
-// const [response, setResponse] = useState("")
+const [token, setToken] = useState(sessionStorage.getItem("token") || "");
+const [loginurl, setLoginUrl] = useState("http://localhost:5000/login")
+const [logouturl, setLogoutUrl] = useState("http://localhost:5000/logout")
+const [isLoading, setIsLoading] = useState(true);
+const [response, setResponse] = useState("")
+
+
+useEffect(() => {
+const tokenAuthenticate = async () =>{
+if (token === "" || token === undefined){
+// window.sessionStorage.setItem("token", json.token)
+}else{
+  setIsLoading(true)
+  try{
+    const response = await fetch(`http://localhost:5000/token/${token}`);
+    const flaskResponse = await response.json();
+  }catch(error){
+    console.log(error)
+  }
+  setIsLoading(false);
+}
+}
+tokenAuthenticate()
+}, [token])
+
 const loginAccount = async () =>{
 
 const configs = {
@@ -23,9 +43,11 @@ password: inputPassword
 try {
        
   console.log(configs, "THESE ARE THE CONFIGS!!!!!>>>>>>>>>>") 
-  const response = await fetch(url, configs);
-  // const flaskResponse = await response.json();
-  // setResponse(flaskResponse["response"]);
+  const response = await fetch(loginurl, configs);
+  const flaskResponse = await response.json();
+  setResponse(flaskResponse["response"]);
+  sessionStorage.setItem("token", flaskResponse["token"])
+  setToken(flaskResponse["token"])
 } catch (error) {
   console.log(error);
 }

@@ -4,6 +4,20 @@ import {StreamApp, StatusUpdateForm, FlatFeed} from 'react-activity-feed';
 import { NavLink } from 'react-router-dom';
 
 
+// const [url, setURL] = useState("http://localhost:5000/feed")
+// function Feed (){
+// const [feed, setFeed] = useState([]);
+
+
+
+// return(
+
+
+
+// )
+// }
+
+
 // function Feed () {
 
    
