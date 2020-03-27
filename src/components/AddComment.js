@@ -1,6 +1,6 @@
 import React, {Component, useState} from 'react'; 
 
-const [url, setUrl] = useState("http://localhost:5000/comment")
+const [url, setUrl] = useState("http://localhost:5000/add/comment")
 
 function AddComment(props) {
 
