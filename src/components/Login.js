@@ -1,10 +1,11 @@
 import React, {Component, useState, useEffect} from "react";
-
+import {useSelector, useDispatch} from 'react-redux'
 function Login () {
+const dispatch = useDispatch()
+const token = useSelector(state => state.token)
 
 const [inputUsername, setInputUsername] = useState("");
 const [inputPassword, setInputPassword] = useState("");
-const [token, setToken] = useState(sessionStorage.getItem("token") || "");
 const [loginurl, setLoginUrl] = useState("http://localhost:5000/login")
 const [logouturl, setLogoutUrl] = useState("http://localhost:5000/logout")
 const [isLoading, setIsLoading] = useState(true);
@@ -19,7 +20,7 @@ if (token === "" || token === undefined){
   setIsLoading(true)
   try{
     const response = await fetch(`http://localhost:5000/token/${token}`);
-    const flaskResponse = await response.json();
+    const flaskResponse = response.json();
   }catch(error){
     console.log(error)
   }
@@ -27,7 +28,8 @@ if (token === "" || token === undefined){
 }
 }
 tokenAuthenticate()
-}, [token])
+}, 
+[token])
 
 const loginAccount = async () =>{
 
@@ -47,7 +49,10 @@ try {
   const flaskResponse = await response.json();
   setResponse(flaskResponse["response"]);
   sessionStorage.setItem("token", flaskResponse["token"])
-  setToken(flaskResponse["token"])
+  dispatch({
+    type: 'TOKEN',
+    token: flaskResponse["token"][0]
+  })
 } catch (error) {
   console.log(error);
 }

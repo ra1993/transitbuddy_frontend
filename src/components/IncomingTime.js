@@ -1,20 +1,43 @@
-import React, {Component, useState} from "react";
+import React, {Component, useState, useEffect} from "react";
+const [url, setUrl] = useState("http://localhost:5000/incoming/time");
 
-// const [url, setUrl] = useState("http://localhost:5000/incoming/time");
 
 function IncomingTime(props) {
-// const [train, setTrain] = useState("");
-// const [station, setStation] = useState("");
-// const [time, setTime] = useState("");
 
 
-// const getTime = () =>  {
+const [time, setTime] = useState("");
 
 
+const configs = {
+method : "GET",
+mode : "cors",
+headers : {"Content-Type" : "application/json"},
+train = props.train,
+station = props.station
+
+}
+
+
+// useEffect(() => {
+// if (props.train !== undefined){
+//   setTrain 
+// }
+
+  
+}
+
+const getTime = () =>  {
+time = await fetch(url+"/"+train+"/"+station, configs)
+return time
+
+}
 
   return (
   <div id = "time">
-  {/* <input type = "time" id = "time" onChange={e => setTime(e.target.value)} /> */}
+  <label  
+  {...setTime}
+  onChange = {e => getTime(e.target.value)}
+  ></label>
 
   </div>
   )

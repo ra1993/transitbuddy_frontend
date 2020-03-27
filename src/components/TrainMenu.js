@@ -59,6 +59,8 @@ function TrainMenu() {
           {renderTrains()}
         </select>
         <StationMenu stations={stations} />
+        <StationMenu train = {trains} />
+        
       </div></center>
   );
 }

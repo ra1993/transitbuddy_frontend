@@ -10,10 +10,11 @@ import Register from './Register';
 import Login from './Login';
 import mtaFeed from './MTA_TwitterFeed';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-
+import {useSelector} from 'react-redux'
 import './../App.css';
-function Homepage() {
-
+function Homepage(props) {
+  const pToken = useSelector(state => state.token)
+  console.log('Token', pToken)
   return (
   <div className="userHomepage">
     

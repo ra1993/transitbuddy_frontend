@@ -3,13 +3,15 @@ import React, {useState, useEffect} from "react";
 
 function StationMenu(props) {
   const [stations, setStations] = useState([])
-
+  const [selectedStation, setSelectedStation] = useState(-1)
   const renderStations = () => {
     return stations.map((station, i) => {
  
       return ( <option value={i} key={'station-option-' + i}>{station}</option> )
     })
   }
+
+
 
   useEffect(() => {
     if(props.stations !== undefined) {
@@ -24,6 +26,7 @@ function StationMenu(props) {
         <select id = "stationdropdown">
           {renderStations()}
         </select>
+      <IncomingTime train = {props.train} station = {selectedStation}/>
 
       </div></center>
   );
