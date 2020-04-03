@@ -20,15 +20,26 @@
 box-sizing: border-box;
 margin: 0;
 padding: 0;
-
+position: relative;
 }
 
 body{
-
 font-family: Arial, Helvetica, sans-serif;
 line-height: 1.4;
+height: 100%;
+}
+html,
+#root {
+  height: 100%;
+}
+.App {
+height: 100%;
+display: grid;
+grid-template-rows: 20% 1fr 15%;
 
-
+background: url('/Banner1.jpg');
+background-position: center;
+background-size: cover;
 }
 
 a{
@@ -58,8 +69,7 @@ background: white;
 }
 
 .footbar{
-height: -100vh;
-position: absolute;
+/* //height: -100vh; */
 bottom: 0;
 width: 100%;
 background: #14397f;
@@ -81,12 +91,8 @@ box-sizing: border-box;
 }
 
 .homebackground{
-display: block;
-opacity: .5;
-width: 100%;
-height: 100%;
-position: absolute;
 
+opacity: 0.5;
 
 }
 
@@ -119,19 +125,24 @@ background-color: orchid;
 /* 
 drop down menu styling */
 .searchCategories{
+  grid-row: 2;
+  grid-column: 1;
   font-size: 13px;
   padding: 10px 8px 10px 14px;
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 6px;
   overflow: hidden;
   position: relative;
+  align-items: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
 }
 
 .searchCategories .select{
   width: 120%;
   background:url('/home/richarda/Bootcamp/project_MTA/frontend_app/public/arrow.png') no-repeat;
   background-position:80% center;
+
 }
 
 .searchCategories .select select{
@@ -147,3 +158,42 @@ drop down menu styling */
 }
 /* //----------Homepage.js--------------------- */
 
+.userHomepage {
+  display: grid;
+  grid-template-columns: .5fr .5fr;
+  grid-column-gap: 20px;
+  grid-template-rows: 75px 50px 1fr;
+  grid-row-gap: 20px;
+  min-height: 100%;
+
+}
+
+.userHomepage h1 {
+  grid-column: span 2;
+}
+
+.weather {
+  grid-row: 2;
+  grid-column: 2;
+  display: block;
+  /* background-color: white; */
+  border: 2px;
+}
+
+.notes {
+grid-column: 2;
+grid-row: 4;
+
+}
+
+.feed {
+grid-column: 1;
+grid-row: 3;
+}
+/* -----------------------------------------trainmenu */
+
+.menu {
+  position: absolute;
+  z-index: 50;
+  top: -25px;
+}

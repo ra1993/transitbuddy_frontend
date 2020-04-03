@@ -51,24 +51,23 @@ function TrainMenu() {
   }, [])
 
   return (
-    <center>
+    
       <div id = "searchCategories" className = "searchCategories">
-
-        <select name = "searchCategories" id = "searchCategories"
-                onChange = {e => setInputTrain(e.target.value)}>
+      <select name = "searchCategories" id = "searchCategories"
+            onChange = {e => setInputTrain(e.target.value)}>
           {renderTrains()}
-        </select>
-        <StationMenu stations={stations} />
-        <StationMenu train = {trains} />
+      </select>
         
-      </div></center>
+        <StationMenu stations={stations} train={inputTrain} />
+        <button className = "addRoute">Add Route</button>
+        <button className = "removeRoute">Remove Route</button>
+
+      </div>
   );
 }
 
 
 export default TrainMenu;
-
-
 
 
 
