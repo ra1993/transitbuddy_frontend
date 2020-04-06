@@ -37,14 +37,6 @@ function IncomingTime({train, station}) {
   }, [train, station])
     
 
-
-  // const getTime = async () =>  {
-  // time = await fetch(url+"/"+props.train+"/"+props.station, configs)
-  // console.log(time)
-  // return time
-
-  //}
-
   return (
   <label id = "time">
     {time}

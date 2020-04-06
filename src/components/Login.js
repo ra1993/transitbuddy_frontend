@@ -9,28 +9,6 @@ function Login (props) {
   const [inputPassword, setInputPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-
-// useEffect(() => {
-//   console.log('Login Effect')
-//   // This effect is doing absolutely nothing...
-
-//   const tokenAuthenticate = async () =>{
-//     if (token === "" || token === undefined){
-//     // window.sessionStorage.setItem("token", json.token)
-//     }else{
-//       setIsLoading(true)
-//       try{
-//         const response = await fetch(`http://localhost:5000/token/${token}`);
-//         const flaskResponse = response.json();
-//       }catch(error){
-//         console.log(error)
-//       }
-//       setIsLoading(false);
-//     }
-//   }
-//   tokenAuthenticate()
-// }, [token])
-
 const loginAccount = async () =>{
   setIsLoading(true)
   const configs = {

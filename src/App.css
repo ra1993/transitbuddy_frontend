@@ -197,3 +197,21 @@ grid-row: 3;
   z-index: 50;
   top: -25px;
 }
+
+/* -----------------------------------------------comment-feed styling */
+
+.Feed{
+display: block;
+padding: 15px;
+list-style: none;
+background: white;
+width: 50%;
+height: 40%;
+align-items: center;
+}
+.Feed-item{
+position: relative;
+padding-bottom: 20px;
+padding-left: 30px;
+border-left: 2px solid #e4e8eb;
+}
