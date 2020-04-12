@@ -18,7 +18,7 @@ const [temperature, setTemperature] = useState({
 const [humidity, setHumidity] = useState("");
 const [wind, setWind] = useState("");
 const [description, setDescription] = useState("");
-const [outside, setOutside] = useState('Alien')
+const [outside, setOutside] = useState('')
 const [response, setResponse] = useState("")
 // const [sunrise, setSunrise] = useState(new Date())
 // const [sunset, setSunset] = useState(new Date())
@@ -31,17 +31,17 @@ const configs = {
     headers : {"Content-Type" : "application/json"},
 }
 
-//fetche weather data
-const get_Weather = async (e) =>{
-// const api_call = await(url, configs)
-// const response = await api_call.json()
-// temperature: response.main.temp,
-// humidity: response.main,humidity,
-// description: response.weather[0].description,
-// error: ""
+// //fetche weather data
+// const get_Weather = async (e) =>{
+// // const api_call = await(url, configs)
+// // const response = await api_call.json()
+// // temperature: response.main.temp,
+// // humidity: response.main,humidity,
+// // description: response.weather[0].description,
+// // error: ""
 
-// console.log(response)
-}
+// // console.log(response)
+// }
 
   useEffect(() => {
     if(navigator.geolocation) {
@@ -55,13 +55,18 @@ const get_Weather = async (e) =>{
     fetch(apiUrl, configs)
       .then(res => res.json())
       .then(res => {
-        setApiKey(res.weatherkey)
+        setApiKey(res.weather_key)
+        
       })
+      console.log(apiUrl)
+      console.log(apiKey)
   }, [])
 
   useEffect(() => {
+
     if(apiKey !== '' && inputLatitude !== 0 && inputLongitude !== 0) {
       const loc = locUrl(inputLatitude, inputLongitude, apiKey)
+     
       fetch(loc)
         .then(res => res.json())
         .then(res => {
@@ -91,7 +96,7 @@ const get_Weather = async (e) =>{
   return (
     
     <div>
-    <form className = "weather">
+    {/* <form className = "weather">
     <span>
       <input id = "city" 
       className = "weatherForm" 
@@ -109,10 +114,10 @@ const get_Weather = async (e) =>{
     onClick = {() => get_Weather()}
     >Submit</button>
     </span>
-    </form>
+    </form> */}
 
     
-    <div>
+    <div className = "weatherData">
     <span>
     <h4>Temperature: {temperature.current} °F</h4>
     <h4>Humidity: {humidity}</h4>

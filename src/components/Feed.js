@@ -19,9 +19,6 @@ function Feed(){
      })
     }
     
-
-
-
   useEffect(() => {
     const trains = TrainList()
     setTrainList(trains)
@@ -59,6 +56,7 @@ function Feed(){
   return(
     <div className = "commentFeed"> 
     <center>
+    <h1>Train Feed</h1>
       {/* train selection */}
       <select className = "trainSelection" 
               onClick = {e => setInputTrain(e.target.value)}>
@@ -67,7 +65,7 @@ function Feed(){
 
       <form className = "commentForm">
 
-        <h1>THis is the feed</h1>
+        
         <div className = "Feed">
           {renderComments()}
         </div>

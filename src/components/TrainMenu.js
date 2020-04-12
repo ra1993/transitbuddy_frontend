@@ -24,7 +24,7 @@ const fetchTrains = () => {
     'N', 'Q', 'R', 'W', 'Z', '1', '2', '3', '4', '5', '6', '7']
 }
 function TrainMenu() {
-  const [inputTrain, setInputTrain] = useState("A");
+  const [inputTrain, setInputTrain] = useState("F");
   const [stations, setStations] = useState([])
   const [trains, setTrains] = useState([])
 
@@ -52,17 +52,18 @@ function TrainMenu() {
 
   return (
     
-      <div id = "searchCategories" className = "searchCategories">
-      <select name = "searchCategories" id = "searchCategories"
+    <div className = "trainComp">
+  
+      <select className = "trainMenu"
             onChange = {e => setInputTrain(e.target.value)}>
           {renderTrains()}
       </select>
         
         <StationMenu stations={stations} train={inputTrain} />
-        <button className = "addRoute">Add Route</button>
-        <button className = "removeRoute">Remove Route</button>
-
-      </div>
+        <br></br>
+        {/* <button className = "addRoute">Add Route</button>
+        <button className = "removeRoute">Remove Route</button> */}
+    </div>
   );
 }
 

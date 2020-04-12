@@ -16,15 +16,15 @@ import Logout from './components/Logout'
 import './App.css';
 function App() {
   return (
+ 
   <div className="App">
+
      <h1 className = "appName">Transit Buddy</h1>
-      
-        
       <BrowserRouter>
         <div>
         
           <NavBar/>
-       
+         
             <Switch>
             <Route path='/home' component={Homepage}/>
             <Route path="/register" component={Register}/>
@@ -34,6 +34,7 @@ function App() {
             <Route path = "/mtaFeed" component = {mtaFeed}/>
             <Route path="*" component={Login}/>       
            </Switch>
+       
         </div> 
       </BrowserRouter>
    

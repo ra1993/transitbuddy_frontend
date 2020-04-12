@@ -11,7 +11,7 @@ const NavBar= () => {
     return (
     
       <div className = "menu">
-      <span>
+   
         <ul> 
         <NavLink className = "homemenu" to="/home">Home</NavLink>
         <NavLink className = "homemenu" to="/register">Register</NavLink>
@@ -24,7 +24,7 @@ const NavBar= () => {
         <NavLink className = "homemenu" to= "/feed">Feed</NavLink>
         <NavLink className = "homemenu" to="/mtaFeed">MTATwitterFeed</NavLink>
         </ul> 
-      </span>
+    
   
     </div>
  

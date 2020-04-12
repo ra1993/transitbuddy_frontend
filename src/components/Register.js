@@ -42,7 +42,7 @@ function Register () {
     return (
       <div className="Register">
        
-        <h2>Register Account</h2>
+        <h1>Register Account</h1>
         <div id="flaskResponse"/>
        <center><form className = "registerForm">
         <input

@@ -40,7 +40,7 @@ const loginAccount = async () =>{
       <div>Logging in...</div>
       :
       <div className="loginCard">
-        <h2>Login</h2>
+        <h1>Login</h1>
         
         <form className = "loginForm">
           <input id="username" 

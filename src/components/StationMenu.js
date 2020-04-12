@@ -24,7 +24,7 @@ function StationMenu(props) {
 
   return (
     <>
-      <select id = "stationdropdown" className={'dropBtn'}
+      <select  className = "stationMenu"
         onChange = {onChange}>
           {renderStations()}
       </select>

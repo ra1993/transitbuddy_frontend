@@ -22,13 +22,16 @@ function Homepage(props) {
   <div className="userHomepage">
     <h1> Transit Buddy Homepage</h1>
     <TrainMenu/>
+    <TrainMenu/>
+   
+ 
     <div className="weather"> Weather Component
     <Weather/>
     </div>
-    <div className="notepad">Notes Component</div>
+    {/* <div className="notepad">Notes Component</div>*/}
    
-    </div> 
-    
+    {/* </div>   */}
+    </div>
   )}
 
 export default Homepage; 
