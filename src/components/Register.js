@@ -40,7 +40,8 @@ function Register () {
       
     }
     return (
-      <div className="Register">
+      <main>
+        <div className="Register">
        
         <h1>Register Account</h1>
         <div id="flaskResponse"/>
@@ -87,7 +88,7 @@ function Register () {
         </center>
 
       </div>
-      
+      </main>
     )
   }
   

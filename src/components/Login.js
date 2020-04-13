@@ -36,6 +36,7 @@ const loginAccount = async () =>{
 }
 
   return (
+    <main>
    <center> {isLoading ? 
       <div>Logging in...</div>
       :
@@ -65,9 +66,8 @@ const loginAccount = async () =>{
       </div>
     }
     </center>
+    </main>
   )
 }
 
 export default Login;
-
-

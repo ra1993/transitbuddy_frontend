@@ -22,6 +22,7 @@ function Homepage(props) {
   <div className="userHomepage">
     <h1> Transit Buddy Homepage</h1>
     <TrainMenu/>
+    <br></br>
     <TrainMenu/>
    
  

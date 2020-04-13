@@ -54,7 +54,9 @@ function Feed(){
 
 
   return(
+    <main>
     <div className = "commentFeed"> 
+   
     <center>
     <h1>Train Feed</h1>
       {/* train selection */}
@@ -75,7 +77,9 @@ function Feed(){
         </div>
       </form>
       </center>
+     
     </div>
+    </main>
   )
 }
 

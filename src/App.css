@@ -1,140 +1,114 @@
-
-/* Extra small devices (600px and down) */
-
-@media only screen and (max-width: 600px) {
- .homemenu{
-width: 100%;
- }    
+*, *:before, *:after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Small devices (tablets, and large phones 600px and up) */
-@media only screen and (min-width: 600px) {
-  .homemenu{
- width: 100%;
-  }    
- }
-/* Medium sized devices: tablets */
- @media only screen and (min-width: 768px) {
-  .homemenu{
- width: 100%;
-  }    
- }
-
- /* laptops and desktops */
- @media only screen and (min-width: 992px) {
-  .homemenu{
- width: 100%;
-  }    
- }
-
- /* large laptops and desktops */
- @media only screen and (min-width: 1200px) {
-  .homemenu{
- width: 100%;
-  }    
- }
-
-
-*{
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-position: relative;
+body,html{
+  font-size: 62.5%;
+}
+#root{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 body{
-font-family: Arial, Helvetica, sans-serif;
-line-height: 1.4;
-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+  height: 100vh;
 }
-html,
-#root {
-  height: 100%;
-}
-.App {
-height: 100%;
-display: grid;
-grid-template-rows: 20% 1fr 15%;
 
-background: url('/Banner1.jpg');
-background-position: center;
-background-size: cover;
+h1{
+  font-size:2rem;
+}
+h4{
+  font-size: 1.5rem;
+}
+a{
+  font-size:1.6rem;
+}
+
+main {
+  height: 100%;
+  background: url('/Banner1.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
 a{
-
 color: #333;
 text-decoration: none;
-
-}
-
-.appName{
-display: block;
-text-align: center;
-padding: 100px;
-font-size: 30px;
-border-color: black;
-color: orangered;
-background: #14397f;
-
 }
 
 /* -----------------------------navbar */
-.homemenu{
-left: 0;
-right: 0;
-color: #47444E;
-border: 2px;
-border-color: #A8C5DD;
-
-
-
+.header{
+  background: #D1DAE1;
+  display: flex;
+  align-items: center;
 }
 
+.header ul {
+  display: flex;
+  flex:1;
+}
 
-.homemenu:hover{
+.header ul a{
+  color: #47444E;
+  padding: 2rem;
+  border: 0.2rem solid #A8C5DD;
+} 
+
+.header ul a:hover{
 background-color: #14397f;
 color: orangered;
-width: 100%;
-height: 100%;
 }
-
 
 .menu {
   position: absolute;
   display: flex;
   align-items: center;
   z-index: 50;
-  top: -25px;
+  top: -2.5rem;
   width: 100%;
-  
-
 }
 
 .menu a{
 margin-right: 20%;
-
-  
 }
 
 .menu ul {
   width: 100%;
-  padding: 10px;
+  padding: 1rem;
   background-color: #DEE1E4;
 }
+/*Media */
+@media only screen and (max-width: 600px) {
+  .header{
+    text-align: center;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .header ul {
+    justify-content: space-between;
+  }
+  .header ul a{
+    flex:1;
 
+    font-size: 1rem;
+    padding: 1rem;
+  }
+ }
 
 /* -----------------------------Footer */
 
 .footbar{
-/* //height: -100vh; */
 bottom: 0;
+position: fixed;
 width: 100%;
 background: #14397f;
 border-color: gray;
-font-size: 20px;
 padding: 20px;
-
 }
 
 .footerLinks{
@@ -144,7 +118,6 @@ color: orangered;
 display: block;
 padding: 10px;
 box-sizing: border-box;
-
 
 }
 
@@ -171,20 +144,24 @@ align-items: left;
 width: 100%;
 height: 50%;
 box-sizing: border-box;
-
 border-color: orangered;
 background-color: orchid;
-
 }
 
+.App{
+  display:flex;
+  flex-direction: column;
+  height: 100%;
+}
 
 /* trainComp-------------------------------- */
 .trainComp{
 background-color: white;
 display: flex;
 flex-direction: row;
-width: 30%;
+width: 10%;
 color: #14397f;
+align-items: center;
 
 }
 
@@ -259,7 +236,7 @@ train menu styling */
 
 .trainTimes {
   display: flex;
-
+  font-size: 15px;
   padding: 0px, 30px, 0px, 30px;
   
 
@@ -267,24 +244,24 @@ train menu styling */
 
 /* //----------Homepage.js--------------------- */
 
-
-
 .userHomepage {
 
-
-
+background:rgba(255,255,255,0.5);
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 1.6rem;
 
 }
 
 h1 {
  padding: 10px;
-  
+ color: orangered;
 
 } */
 
 .weather {
-  /* grid-row: 2;
-  grid-column: 2; */
+
   display: flex;
   
   background: white;
@@ -309,12 +286,13 @@ grid-row: 3;
 
 .Feed{
 display: block;
-padding: 15px;
+padding: 20px;
 list-style: none;
 background: white;
 width: 50%;
 height: 100%;
 align-items: center;
+font-size: 20px;
 
 }
 
@@ -324,4 +302,3 @@ padding-bottom: 20px;
 padding-left: 30px;
 border-left: 2px solid #e4e8eb;
 }
-

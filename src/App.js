@@ -18,29 +18,20 @@ function App() {
   return (
  
   <div className="App">
-
-     <h1 className = "appName">Transit Buddy</h1>
       <BrowserRouter>
-        <div>
-        
           <NavBar/>
-         
             <Switch>
-            <Route path='/home' component={Homepage}/>
-            <Route path="/register" component={Register}/>
-            <Route path = "/login"  component = {Login}/>
-            <Route path="/logout" component={Logout}/>
-            <Route path = "/feed" component = {Feed}/>
-            <Route path = "/mtaFeed" component = {mtaFeed}/>
-            <Route path="*" component={Login}/>       
-           </Switch>
-       
-        </div> 
+              <Route path='/home' component={Homepage}/>
+              <Route path="/register" component={Register}/>
+              <Route path = "/login"  component = {Login}/>
+              <Route path="/logout" component={Logout}/>
+              <Route path = "/feed" component = {Feed}/>
+              <Route path = "/mtaFeed" component = {mtaFeed}/>
+              <Route path="*" component={Login}/>       
+            </Switch>
       </BrowserRouter>
-   
      <Footer/>
   </div>
-
   );
 
 }

@@ -10,23 +10,21 @@ const NavBar= () => {
     }, [token])
     return (
     
-      <div className = "menu">
-   
-        <ul> 
-        <NavLink className = "homemenu" to="/home">Home</NavLink>
-        <NavLink className = "homemenu" to="/register">Register</NavLink>
-        
+      <header className="header">
+      <h1 className = "appName">Transit Buddy</h1>
+      <ul> 
+     
+        <NavLink to="/home">Home</NavLink>
+        <NavLink  to="/register">Register</NavLink>
         {token === '' ?
-          <NavLink className = "homemenu" to="/login">Login</NavLink>
+          <NavLink  to="/login">Login</NavLink>
         :
-          <NavLink className="homemenu" to="/logout">Logout</NavLink>
+          <NavLink  to="/logout">Logout</NavLink>
         }
-        <NavLink className = "homemenu" to= "/feed">Feed</NavLink>
-        <NavLink className = "homemenu" to="/mtaFeed">MTATwitterFeed</NavLink>
-        </ul> 
-    
-  
-    </div>
+        <NavLink  to= "/feed">Feed</NavLink>
+        <NavLink to="/mtaFeed">MTATwitterFeed</NavLink>
+      </ul> 
+   </header>
  
     );
 }
