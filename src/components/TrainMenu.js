@@ -53,14 +53,15 @@ function TrainMenu() {
   return (
     
     <div className = "trainComp">
-  
+      
       <select className = "trainMenu"
             onChange = {e => setInputTrain(e.target.value)}>
           {renderTrains()}
       </select>
-        
+    
         <StationMenu stations={stations} train={inputTrain} />
         <br></br>
+    
         {/* <button className = "addRoute">Add Route</button>
         <button className = "removeRoute">Remove Route</button> */}
     </div>

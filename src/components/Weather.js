@@ -15,7 +15,7 @@ const [temperature, setTemperature] = useState({
   high: 5000,
   low: -3000
 });
-const [humidity, setHumidity] = useState("");
+const [humidity, setHumidity] = useState(0);
 const [wind, setWind] = useState("");
 const [description, setDescription] = useState("");
 const [outside, setOutside] = useState('')
@@ -78,21 +78,12 @@ const configs = {
             high: res.main.temp_max,
             low: res.main.temp_low
           })
-
-          setHumidity(res.humidity)
+          setHumidity(res.main.humidity)
           setWinds(res.wind.speed)
         })
     }
   }, [apiKey, inputLatitude, inputLongitude])
 
-  useEffect(() => {
-    console.log('City', city)
-    console.log('Outside', outside)
-    console.log('Temps', temperature)
-    console.log('Humidity', humidity)
-
-    console.log('Winds', winds)
-  }, [winds])
   return (
     
     <div>
@@ -118,12 +109,18 @@ const configs = {
 
     
     <div className = "weatherData">
-    <span>
-    <h4>Temperature: {temperature.current} °F</h4>
-    <h4>Humidity: {humidity}</h4>
-    <h4>Wind Speed: {winds}</h4>
-   
-    </span>
+    <table>
+    <tr>
+      <th><h4>Temperature:</h4></th>
+      <th><h4>Humidity:</h4></th>
+      <th><h4>Wind Speed:</h4></th>
+    </tr>
+
+    <td><h4>{temperature.current} °F</h4></td>
+    <td><h4>{humidity}</h4></td>
+    <td><h4>{winds}</h4></td>
+    </table>
+ 
     </div>
     </div>
   );
