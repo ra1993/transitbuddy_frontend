@@ -24,7 +24,7 @@ const fetchTrains = () => {
     'N', 'Q', 'R', 'W', 'Z', '1', '2', '3', '4', '5', '6', '7']
 }
 function TrainMenu() {
-  const [inputTrain, setInputTrain] = useState("F");
+  const [inputTrain, setInputTrain] = useState("A");
   const [stations, setStations] = useState([])
   const [trains, setTrains] = useState([])
 
@@ -60,7 +60,7 @@ function TrainMenu() {
       </select>
     
         <StationMenu stations={stations} train={inputTrain} />
-        <br></br>
+        
     
         {/* <button className = "addRoute">Add Route</button>
         <button className = "removeRoute">Remove Route</button> */}
