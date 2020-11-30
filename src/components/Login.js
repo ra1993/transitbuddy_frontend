@@ -41,10 +41,11 @@ const loginAccount = async () =>{
       <div>Logging in...</div>
       :
       <div className="loginCard">
-        <h1>Login</h1>
+        <h1>Login Page</h1>
         
         <form className = "loginForm">
-          <input id="username" 
+          <input id="username"
+          className = "inputField" 
           type = "text"
           placeholder="Username"
           onChange = {e => setInputUsername(e.target.value)}
@@ -53,6 +54,7 @@ const loginAccount = async () =>{
           <br></br>
 
         <input id="password" 
+        className = "inputField"
         type = "password"
         placeholder="Password" 
         onChange = {e => setInputPassword(e.target.value)}
@@ -60,7 +62,9 @@ const loginAccount = async () =>{
         ></input>
         </form>
         <br></br>
-        <button onClick={() => loginAccount()}id="loginButton">Login</button>
+        <button onClick={() => loginAccount()}
+        className = "loginButton"
+        id="loginButton">Login</button>
         <br></br>
       
       </div>

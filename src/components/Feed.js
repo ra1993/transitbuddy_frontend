@@ -45,9 +45,10 @@ function Feed(){
     return comments.map((c, i) => {
    
       return (<div className={'comment'} key={'comment-' + i}>
-        <div className={'comment-username'}>{c.username}</div>
+        {/* <div className={'comment-username'}>{c.username}</div> */}
         <div className={'comment-time'}>{c.time.toLocaleString()}</div>
         <div className={'comment-comment'}>{c.comment}</div>
+        <br></br>
       </div>)
     })
   }

@@ -11,7 +11,7 @@ const NavBar= () => {
     return (
     
       <header className="header">
-      <h1 className = "appName">Transit Buddy</h1>
+      <h1 className = "appName">N.Y.C.K.S</h1>
       <ul> 
      
         <NavLink to="/home">Home</NavLink>

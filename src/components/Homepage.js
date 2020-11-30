@@ -6,6 +6,7 @@ import StationMenu from './StationMenu';
 import IncomingTime from './IncomingTime';
 import LandingPage from './LandingPage';
 import Weather from './Weather';
+import StationList from './PickStationTrains';
 
 import Footer from './Footer.js';
 import Register from './Register';
@@ -20,11 +21,16 @@ function Homepage(props) {
   console.log('Token', pToken)
   return (
   <div className="userHomepage">
-    <h1> Transit Buddy Homepage</h1>
+    <h1> New York Commuter Knowledge System</h1>
+
+    <center><h2>Subway Times</h2></center>
     <TrainMenu/>
+    
     <br></br>
     <TrainMenu/>
-   
+
+    <br></br>
+    <StationList/>
  
     <div className="weather"> Weather Component
     <Weather/>

@@ -61,9 +61,6 @@ function TrainMenu() {
     
         <StationMenu stations={stations} train={inputTrain} />
         
-    
-        {/* <button className = "addRoute">Add Route</button>
-        <button className = "removeRoute">Remove Route</button> */}
     </div>
   );
 }

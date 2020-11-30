@@ -43,12 +43,13 @@ function Register () {
       <main>
         <div className="Register">
        
-        <h1>Register Account</h1>
+        <h1>Registration</h1>
         <div id="flaskResponse"/>
        <center><form className = "registerForm">
         <input
           type = "text" 
           id="f_name" 
+          className = "inputField"
           onChange={e => setInputF_name(e.target.value)}
           placeholder="First Name">
         </input>
@@ -56,6 +57,7 @@ function Register () {
         <input
           type = "text"  
           id="l_name" 
+          className = "inputField"
           onChange={e => setInputL_name(e.target.value)}
           placeholder="Last Name">
         </input>
@@ -63,6 +65,7 @@ function Register () {
         <input 
           type = "text"
           id="username" 
+          className = "inputField"
           onChange={e => setInputUsername(e.target.value)}
           placeholder="Username">
         </input>
@@ -70,6 +73,7 @@ function Register () {
         <input 
           type = "password"
           id="password" 
+          className = "inputField"
           onChange={e => setInputPassword(e.target.value)}
           placeholder="Password">
         </input>
@@ -77,6 +81,7 @@ function Register () {
         <input 
           type = "text"
           id="email" 
+          className = "inputField"
           onChange={e => setInputEmail(e.target.value)}
           placeholder="Email">
         </input>
